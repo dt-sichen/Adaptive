@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none;
+    color: black;
+}
+ol,ul{
+    list-style: none;
+}
+/* 头部整体 */
+.header{
+    height: 60px;
+    width: 100%;
+}
+/* 页面实体区域 */
+.centre{
+    overflow: hidden;
+    width: 990px;
+    margin: 0 auto;
+    background-color: pink;
+}
+/* 页面logo */
+.header .centre .logo{
+    float: left;
+}
+.nav-list{
+    margin-top: 26px;
+    margin-right: 2px;  
+    float: right;
+    padding: 6px;
+}
+.line{
+    margin: 2px 0;
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: #6190e8;
+}
+/* nav栏 */
+nav{
+    float: left;
+    padding-left: 50px;
+}
+nav ul li{
+    float: left;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 10px;
+    position: relative;
+}
+/* 导航列表上的3条蓝色线条类 */
+.nav-list{
+    display: none;
+}
+nav ul li.active::before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #6190e8; 
+}
+nav ul li a{
+    display: block;
+    height: 100%;
+    padding: 0 15px;
+}
+/* 像素大于1024px时改变 */
+@media (max-width: 1024px){
+    /* 中心区域自适应满屏 */
+    .centre{
+        width: 100%;
+    }
+    /* 显示导航列表按钮 */
+    .nav-list{
+        display: block;
+    }
+    /* 隐藏手机端nav栏需点击打开 */
+    .navigation{
+        /* 高度设0溢出隐藏实现 */
+        overflow: hidden;
+        height: 0;
+        position: absolute;
+        margin-top: 60px;
+        transition: height .5s;
+    }
+    .navigationheight{
+
+        height: 210px;
+    }
+    nav{
+        float: none;
+        padding: 0;
+    }
+    nav ul li{
+        float: none;
+        margin-bottom: 15px; 
+        height: 30px;
+        line-height: 30px;
+    }
+    nav ul li.active::before{
+        content: ' ';
+        height: 100%;
+        width: 2px;
+        background-color: #6190e8; 
+    }
+}
+
